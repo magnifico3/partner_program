@@ -331,7 +331,7 @@ function updateInfo(gameOverMessage = '') {
   }
   content += `${SNAKE_SYMBOLS[0].body}: Snake Body\n`;
   content += `${SYMBOLS.FOOD}: Food\n`;
-  
+
   // Add persistent messages section
   if (persistentMessages.warnings.length > 0 || persistentMessages.errors.length > 0) {
     content += '\nStatus Messages:\n';
