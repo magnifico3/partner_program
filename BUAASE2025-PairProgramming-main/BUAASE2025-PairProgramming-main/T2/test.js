@@ -114,4 +114,72 @@ assert.strictEqual(
     1
 );
 
+assert.strictEqual(
+    greedy_snake_barriers_checker(
+        [1,1,1,2,1,3,1,4], 
+        1,                  
+        [7,7],                              
+        [2,1,2,6,3,7,3,6,4,7,4,6,5,7,5,6,1,6,6,6,7,6,8,6],
+        0             
+    ),
+    1
+);
+
+assert.strictEqual(
+    greedy_snake_barriers_checker(
+        [2,2,2,1,1,1,1,2], // initial snake
+        1,
+        [2,5],             // food straight ahead
+        [],                // no barriers
+        1
+    ) > 0,
+    true
+);
+
+assert.strictEqual(
+    greedy_snake_barriers_checker(
+        [4,4,4,3,4,2,4,1],
+        1,
+        [5,5],
+        [3,4,5,4,4,5,4,3], // barriers all around the head
+        0
+    ),
+    1
+);
+
+assert.strictEqual(
+    greedy_snake_barriers_checker(
+        [1,1,1,2,1,3,1,4],
+        1,
+        [8,8],
+        [2,1,3,1,4,1,5,1,6,1,7,1], // left edge blocked
+        1
+    ) > 0,
+    true
+);
+
+assert.strictEqual(
+    greedy_snake_barriers_checker(
+        [4,4,4,3,4,2,4,1],
+        1,
+        [5,5],
+        [3,5,5,5,3,3,5,3,3,4,5,4], // forms U shape
+        0
+    ),
+    1
+);
+
+assert.strictEqual(
+    greedy_snake_barriers_checker(
+        [2,2,2,1,1,1,1,2], // snake zigzag
+        1,
+        [8,8],
+        [3,2,3,3,4,3,5,3,6,3,7,3,8,3,8,4,8,5,8,6,8,7], // blocks one side
+        1
+    ) > 0,
+    true
+);
+
+
+
 console.log("🎉 You have passed all the tests provided.");
